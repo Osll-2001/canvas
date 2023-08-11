@@ -15,10 +15,10 @@ function App() {
   },[])
 
   return (
-    <>
-      <Canvas />
+    <div className='containerMain'>
       <Tools />
-    </>
+      <Canvas/>
+    </div>
   )
 }
 
