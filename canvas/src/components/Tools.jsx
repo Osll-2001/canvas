@@ -1,20 +1,32 @@
 import { useSelector, useDispatch } from "react-redux"
-import { changeBrushColor } from "../redux/confCanvaSlice"
+import { changeBrushColor, changeBrushRadius } from "../redux/confCanvaSlice"
 import '../styles/App.scss';
 
 const Tools = () => {
 
   const dispatch=useDispatch();
-  const brushColor=useSelector((state)=>state.confCanva.brushColor);
+  const {brushColor,brushRadius}=useSelector((state)=>state.confCanva);
 
-  const handleChange = (e)=>{
+  const handleChangeColor = (e)=>{
     dispatch(changeBrushColor(e.target.value))
+  }
+  const handleChangeRadius = (e)=>{
+    dispatch(changeBrushRadius(e.target.value))
   }
 
   return (
-    <div className='toolsMenu'>
-      <input type="color" value={brushColor} onChange={handleChange}/>
-    </div>
+    <section className='toolsMenu'>
+      <h1>Configuraciones</h1>
+      <div className="elementMenu">
+        <h3>Color Pincel</h3>
+        <input type="color" value={brushColor} onChange={handleChangeColor}/>
+      </div>
+      <div className="elementMenu">
+        <h3>Tamaño pincel</h3>
+        <input type="range" value={brushRadius} onChange={handleChangeRadius}/>
+        <p className="rangeConf">{brushRadius}</p>
+      </div>
+    </section>
   )
 }
 
