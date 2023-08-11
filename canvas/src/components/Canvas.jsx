@@ -1,5 +1,5 @@
 import CanvasDraw from 'react-canvas-draw'
-import '../App.css'
+import '../styles/App.scss'
 import { useSelector } from 'react-redux'
 
 const Canvas = () => {

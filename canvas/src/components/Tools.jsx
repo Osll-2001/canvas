@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux"
 import { changeBrushColor } from "../redux/confCanvaSlice"
+import '../styles/App.scss';
 
 const Tools = () => {
 

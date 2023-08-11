@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux'
-import './App.css'
+import './styles/App.scss'
 import Canvas from './components/Canvas'
 import Tools from './components/Tools'
 import { useEffect } from 'react';
