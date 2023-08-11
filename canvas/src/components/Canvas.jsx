@@ -7,7 +7,9 @@ const Canvas = () => {
   const confCanva=useSelector((state)=> state.confCanva);
 
   return (
-    <CanvasDraw canvasHeight={window.innerHeight-300} canvasWidth={window.innerWidth-300} brushColor={confCanva.brushColor}/>
+    <section className='pincel'>
+    <CanvasDraw id='canvas' canvasHeight={(window.innerHeight)} canvasWidth={(window.innerWidth-(window.innerWidth*.20))} brushColor={confCanva.brushColor} brushRadius={confCanva.brushRadius}/>
+    </section>
   )
 }
 
